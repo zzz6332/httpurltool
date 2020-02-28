@@ -1,24 +1,17 @@
 package com.example.httputilwithhttpurlconnection.httpurlconnection;
 
 import android.util.Log;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.IdentityHashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 
 public class HttpUtil {
     public static final String tag = "HttpUtillllllll";
@@ -55,7 +48,7 @@ public class HttpUtil {
                     if (need_list != null) {
                         getValue();
                         listener.OnFinish(user_value_list);
-                    }else {
+                    } else {
                         listener.OnFinish(key_value_list);
                     }
                 } catch (Exception e) {
@@ -175,7 +168,7 @@ public class HttpUtil {
         for (int i = 0; i < need_list.size(); i++) {
             boolean empty = false;
             String need = need_list.get(i);
-            if (data.indexOf(need) == -1 || need_list.get(i).equals("") || need_list.get(i).equals(" ")){
+            if (data.indexOf(need) == -1 || need_list.get(i).equals("") || need_list.get(i).equals(" ")) {
                 user_value_list.add("\"" + need_list.get(i) + "\": null \n");
                 empty = true;
             }
