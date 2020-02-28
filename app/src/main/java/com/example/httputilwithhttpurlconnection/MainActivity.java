@@ -39,7 +39,10 @@ public class MainActivity extends AppCompatActivity {
         test_list.add("https://free-api.heweather.net/s6/air/now?location=重庆&key=69eb00f8b34e4c3cb3969e9a94416c70");
         test_list.add("https://free-api.heweather.net/s6/weather/now?location=重庆&key=69eb00f8b34e4c3cb3969e9a94416c70");
         test_list.add("http://gank.io/api/data/Android/10/55");
-        HttpUtil.sendHttpWithUrlConnection(test_list.get(0), new httpCallBackListener() {
+        List<String> need_list = new ArrayList();
+        need_list.add("desc");
+        need_list.add("no2");
+        HttpUtil.sendHttpWithUrlConnection(test_list.get(0),need_list, new httpCallBackListener() {
             @Override
             public void OnFinish(List<String> list) {
                 for (int i = 0; i < list.size(); i++) {
